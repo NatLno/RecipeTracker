@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Recipe Tracker</string>
+    <string name="tendances">Tendances</string>
+    <string name="nouveaute">Nouveautés</string>
+
+    <string name="recette_text">Poutine</string>
+    <string name="recette_description">La poutine est un plat québécois composé de frites et de cheddar, recouvert de sauce brune.</string>
+
+    <string name="recette_txt">Tarte aux bleuets</string>
+    <string name="recette_descriptio">La Tarte aux bleuets est un dessert classique convoité tant au Canada et que dans le nord des États-Unis.</string>
+
 </resources>

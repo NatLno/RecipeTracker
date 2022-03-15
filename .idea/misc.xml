@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/drawable/arrow_forward.xml" value="0.1725" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/drawable/conteneur_background.xml" value="0.125" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1835" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.1725" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/drawable/imageview_background.xml" value="0.125" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/layout/fragment_favorites.xml" value="0.25" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/menu/bottom_toolbar.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

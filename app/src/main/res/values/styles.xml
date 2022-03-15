@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TableLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">20sp</item>
+        <item name="android:layout_marginStart">20sp</item>
+        <item name="android:stretchColumns">1</item>
+    </style>
+
+    <style name="Tendances">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/cardview_dark_background</item>
+    </style>
+
+
+    <style name="ImageView">
+        <item name="android:layout_width">125sp</item>
+        <item name="android:layout_height">125sp</item>
+        <item name="android:layout_marginStart">25sp</item>
+        <item name="android:layout_marginTop">15sp</item>
+    </style>
+
+
+</resources>
