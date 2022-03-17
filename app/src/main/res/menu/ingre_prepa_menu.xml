@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ingredients"
+        android:icon="@drawable/ingredient_image"
+        android:title="@string/ingredients" />
+
+    <item
+        android:id="@+id/preparation"
+        android:icon="@drawable/preparation_image"
+        android:title="@string/preparation"/>
+</menu>

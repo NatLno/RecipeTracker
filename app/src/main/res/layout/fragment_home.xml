@@ -4,227 +4,136 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools">
 
-
-<TableLayout
-    style="@style/TableLayout"
-    android:id="@+id/tendances">
-
-    <TableRow
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:text="@string/tendances"
-            style="@style/Tendances"/>
-
-        <ImageButton
-            android:paddingStart="220sp"
-            android:background="@color/white"
-            android:src="@drawable/arrow_forward" />
-
-    </TableRow>
-
-</TableLayout>
-
-
-
-
-    <HorizontalScrollView
-        android:id="@+id/tendances_scrollview"
-        android:layout_below="@+id/tendances"
-        android:layout_width="match_parent"
-        android:layout_height="180sp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:paddingEnd="20sp"
-            android:orientation="horizontal"
-            tools:ignore="RtlSymmetry">
-
-            <RelativeLayout
-                android:id="@+id/poutine"
-                android:layout_width="300sp"
-                android:layout_height="150sp"
-                android:layout_marginStart="20sp"
-                android:layout_marginTop="10sp"
-                android:background="@drawable/conteneur_background"
-                android:elevation="10sp"
-                android:onClick="ouvrirRecette"
-                android:foreground="?attr/selectableItemBackgroundBorderless">
-
-                <ImageView
-                    android:layout_width="25sp"
-                    android:layout_height="25sp"
-                    android:paddingStart="5sp"
-                    android:src="@drawable/etoile"
-                    tools:ignore="RtlSymmetry" />
-
-                <ImageView
-                    android:id="@+id/recette_image"
-                    style="@style/ImageView"
-                    android:src="@drawable/poutine"
-                    android:background="@drawable/imageview_background"
-                    android:clipToOutline="true"
-                    tools:targetApi="s" />
-
-                <TextView
-                    android:id="@+id/recette_text"
-                    android:layout_toEndOf="@id/recette_image"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/recette_text"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:textAlignment="center"/>
-
-                <TextView
-                    android:layout_toEndOf="@id/recette_image"
-                    android:layout_below="@id/recette_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/recette_description"
-                    android:paddingTop="5sp"
-                    android:paddingStart="5sp"
-                    tools:ignore="RtlSymmetry" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/tarte_bleuets"
-                android:layout_width="300sp"
-                android:layout_height="150sp"
-                android:layout_marginStart="20sp"
-                android:layout_marginTop="10sp"
-                android:background="@drawable/conteneur_background"
-                android:elevation="10sp"
-                android:onClick="ouvrirRecette"
-                android:foreground="?attr/selectableItemBackgroundBorderless">
-
-                <ImageView
-                    android:layout_width="25sp"
-                    android:layout_height="25sp"
-                    android:paddingStart="5sp"
-                    android:src="@drawable/etoile"
-                    tools:ignore="RtlSymmetry" />
-
-                <ImageView
-                    android:id="@+id/recette_imag"
-                    style="@style/ImageView"
-                    android:src="@drawable/tarte_aux_bleuets"
-                    android:background="@drawable/imageview_background"
-                    android:clipToOutline="true"
-                    tools:targetApi="s" />
-
-                <TextView
-                    android:id="@+id/recette_txt"
-                    android:layout_toEndOf="@id/recette_imag"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/recette_txt"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:textAlignment="center"/>
-
-                <TextView
-                    android:layout_toEndOf="@id/recette_imag"
-                    android:layout_below="@id/recette_txt"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/recette_descriptio"
-                    android:paddingTop="5sp"
-                    android:paddingStart="5sp"
-                    tools:ignore="RtlSymmetry" />
-
-            </RelativeLayout>
-
-
-        </LinearLayout>
-
-    </HorizontalScrollView>
-
-    <TableLayout
-        android:layout_below="@id/tendances_scrollview"
-        style="@style/TableLayout"
-        android:id="@+id/nouveaute">
-
-        <TableRow
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:text="@string/nouveaute"
-                style="@style/Tendances"/>
+            <TableLayout
+                style="@style/TableLayout"
+                android:id="@+id/tendances">
 
-            <ImageButton
-                android:paddingStart="220sp"
-                android:background="@color/white"
-                android:src="@drawable/arrow_forward" />
-
-        </TableRow>
-
-    </TableLayout>
-
-
-    <HorizontalScrollView
-        android:layout_below="@+id/nouveaute"
-        android:layout_width="match_parent"
-        android:layout_height="180sp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:paddingEnd="20sp"
-            android:orientation="horizontal"
-            tools:ignore="RtlSymmetry">
-
-            <RelativeLayout
-                android:layout_width="300sp"
-                android:layout_height="150sp"
-                android:layout_marginStart="20sp"
-                android:layout_marginTop="10sp"
-                android:background="@drawable/conteneur_background"
-                android:elevation="10sp"
-                android:onClick="ouvrirRecette"
-                android:foreground="?attr/selectableItemBackgroundBorderless">
-
-                <ImageView
-                    android:layout_width="25sp"
-                    android:layout_height="25sp"
-                    android:paddingStart="5sp"
-                    android:src="@drawable/etoile"
-                    tools:ignore="RtlSymmetry" />
-
-                <ImageView
-                    android:id="@id/image"
-                    style="@style/ImageView"
-                    android:src="@drawable/poutine"
-                    android:background="@drawable/imageview_background"
-                    android:clipToOutline="true"
-                    tools:targetApi="s" />
-
-                <TextView
-                    android:id="@+id/titre"
-                    android:layout_toEndOf="@id/image"
+                <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/recette_text"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:textAlignment="center"/>
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_toEndOf="@id/image"
-                    android:layout_below="@id/titre"
-                    android:layout_width="match_parent"
+                    <TextView
+                        android:layout_span="2"
+                        android:text="@string/tendances"
+                        style="@style/Tendances"/>
+
+                    <ImageButton
+                        android:background="#00FFFFFF"
+                        android:src="@drawable/arrow_forward" />
+                </TableRow>
+
+            </TableLayout>
+
+
+            <HorizontalScrollView
+                android:id="@+id/tendances_scrollview"
+                android:layout_below="@+id/tendances"
+                android:layout_width="match_parent"
+                android:layout_height="180sp">
+
+                <LinearLayout
+                    android:id="@+id/tendances_linearLayout"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="@string/recette_description"
-                    android:paddingTop="5sp"
-                    android:paddingStart="5sp"
-                    tools:ignore="RtlSymmetry" />
-            </RelativeLayout>
+                    android:paddingEnd="20sp"
+                    android:orientation="horizontal"
+                    tools:ignore="RtlSymmetry">
 
-        </LinearLayout>
+                </LinearLayout>
 
-    </HorizontalScrollView>
+            </HorizontalScrollView>
+
+            <TableLayout
+                android:layout_below="@id/tendances_scrollview"
+                style="@style/TableLayout"
+                android:id="@+id/nouveaute">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_span="2"
+                        android:text="@string/nouveaute"
+                        style="@style/Tendances"/>
+
+                    <ImageButton
+                        android:background="#00FFFFFF"
+                        android:src="@drawable/arrow_forward"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                </TableRow>
+
+            </TableLayout>
+
+
+            <HorizontalScrollView
+                android:id="@+id/nouveaute_scrollview"
+                android:layout_below="@+id/nouveaute"
+                android:layout_width="match_parent"
+                android:layout_height="180sp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingEnd="20sp"
+                    android:orientation="horizontal"
+                    tools:ignore="RtlSymmetry">
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+
+
+            <TableLayout
+                android:layout_below="@id/nouveaute_scrollview"
+                style="@style/TableLayout"
+                android:id="@+id/dessert">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_span="2"
+                        android:text="@string/dessert"
+                        style="@style/Tendances"/>
+
+                    <ImageButton
+                        android:background="#00FFFFFF"
+                        android:src="@drawable/arrow_forward" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <HorizontalScrollView
+                android:id="@+id/dessert_scrollview"
+                android:layout_below="@+id/dessert"
+                android:layout_width="match_parent"
+                android:layout_height="180sp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingEnd="20sp"
+                    android:orientation="horizontal"
+                    tools:ignore="RtlSymmetry">
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>

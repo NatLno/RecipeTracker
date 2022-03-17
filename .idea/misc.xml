@@ -9,9 +9,16 @@
         <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.1725" />
         <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/drawable/imageview_background.xml" value="0.125" />
         <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/layout/container_recette.xml" value="0.4" />
         <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/layout/fragment_favorites.xml" value="0.25" />
         <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/layout/fragment_search.xml" value="0.25" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/layout/recette_activity.xml" value="0.25" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/layout/recette_layout.xml" value="0.25" />
         <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/menu/bottom_toolbar.xml" value="0.25" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/menu/ingre_prepa_menu.xml" value="0.25" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/menu/search_menu.xml" value="0.25" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/mipmap-anydpi-v26/Recipe_Trakcer.xml" value="0.172" />
       </map>
     </option>
   </component>

@@ -6,7 +6,8 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">20sp</item>
         <item name="android:layout_marginStart">20sp</item>
-        <item name="android:stretchColumns">1</item>
+        <item name="android:layout_marginEnd">20sp</item>
+        <item name="android:stretchColumns">0,1</item>
     </style>
 
     <style name="Tendances">
