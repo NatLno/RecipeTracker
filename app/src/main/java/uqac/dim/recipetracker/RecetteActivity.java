@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -19,8 +20,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class RecetteActivity extends AppCompatActivity {
 
     Recette recette;
-    public static final String EXTRA_RECETTE= "uqac.dim.recipetracker.MESSAGE1";
-
 
 
     @SuppressLint("UseCompatLoadingForDrawables")
@@ -51,6 +50,28 @@ public class RecetteActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        MainActivity.rdb.recetteDao().updateRecette(recette);
+        Intent intent = new Intent();
+        setResult(Activity.RESULT_OK,intent);
+        finish();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                MainActivity.rdb.recetteDao().updateRecette(recette);
+
+                Intent intent = new Intent();
+                setResult(Activity.RESULT_OK,intent);
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     private BottomNavigationView.OnItemSelectedListener navListener =
             new BottomNavigationView.OnItemSelectedListener(){
                 @SuppressLint("NonConstantResourceId")
@@ -73,7 +94,6 @@ public class RecetteActivity extends AppCompatActivity {
                 }
             };
 
-
     public void setFavorite(View v){
 
         ImageView etoile = (ImageView) v;
@@ -86,16 +106,5 @@ public class RecetteActivity extends AppCompatActivity {
             etoile.setContentDescription(getString(R.string.favoris));
         }
         recette.setIsFavorite(!recette.getIsFavorite());
-
-        //MainActivity.rdb.recetteDao().updateRecette(recette);
-        HomeFragment fragment = (HomeFragment) getSupportFragmentManager().findFragmentById(R.id.homeFragment);
-        fragment.updateHome(recette);
-        /*Log.i("DIM",MainActivity.rdb.recetteDao().findByNom(recette.getNom()).toString());
-
-        Intent intent = new Intent();
-        intent.putExtra(EXTRA_RECETTE,recette);
-        setResult(Activity.RESULT_OK,intent);
-        finish();*/
     }
-
 }

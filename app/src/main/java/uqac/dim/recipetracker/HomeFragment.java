@@ -38,6 +38,7 @@ public class HomeFragment extends Fragment {
 
         for (Recette recette:MainActivity.recetteList) {
             initRecette(recette,R.id.tendances_linearLayout);
+            Log.i("DIM",recette.toString());
         }
     }
 
@@ -78,15 +79,9 @@ public class HomeFragment extends Fragment {
             favorisRecette.setContentDescription(getString(R.string.notfavoris));
         }
 
-
         View linearLayout =  getView().findViewById(linearLayoutId);
 
         ((LinearLayout) linearLayout).addView(container_recette);
-    }
-
-    public void updateHome(Recette recette){
-        Log.i("DIM","updateHome");
-        MainActivity.rdb.recetteDao().updateRecette(recette);
     }
 
 

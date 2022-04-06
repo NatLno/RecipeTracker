@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_RECETTE = "uqac.dim.recipetracker.MESSAGE1";
     static final int LAUNCH_RECETTE = 1;
 
+    String fragmentName = "Home";
     public static RecetteBD rdb;
 
     int recette_favorite = 0;
@@ -73,32 +74,27 @@ public class MainActivity extends AppCompatActivity {
         //ouverture de l'appli avec l'écran home
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HomeFragment()).commit();
 
-        /*Recette poutine = new Recette(0, getString(R.string.poutine),getString(R.string.poutine_description),R.drawable.poutine,true);
-        recetteList.add(poutine);
-        recetteImage.add(R.drawable.poutine);
-
-        Recette tarteBleuets = new Recette(1, getString(R.string.tarte_bleuets),getString(R.string.tarte_bleuets_description),R.drawable.tarte_aux_bleuets,false);
-        recetteList.add(tarteBleuets);
-        recetteImage.add(R.drawable.tarte_aux_bleuets);*/
-
-
     }
 
     private BottomNavigationView.OnItemSelectedListener navListener =
             new BottomNavigationView.OnItemSelectedListener(){
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item){
+
                     Fragment selectedFragment = null;
 
                     switch (item.getItemId()){
                         case R.id.home:
                             selectedFragment = new HomeFragment();
+                            fragmentName = "Home";
                             break;
                         case R.id.favorites:
                             selectedFragment = new FavoritesFragment();
+                            fragmentName = "Favorites";
                             break;
                         case R.id.search:
                             selectedFragment = new SearchFragment();
+                            fragmentName = "Search";
                     }
 
                     assert selectedFragment != null;
@@ -156,28 +152,23 @@ public class MainActivity extends AppCompatActivity {
 
         if (requestCode == LAUNCH_RECETTE) {
             if(resultCode == Activity.RESULT_OK){
-                //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HomeFragment()).commit();
+                Log.i("DIM","retour");
+                Fragment fragment = null;
+
+                switch (fragmentName){
+                    case "Home":
+                        fragment = new HomeFragment();
+                        break;
+                    case "Favorites":
+                        fragment = new FavoritesFragment();
+                        break;
+                    case "Search":
+                        fragment = new SearchFragment();
+                }
+
                 recetteList = rdb.recetteDao().getAllRecettes();
-                //updateRecette(recette);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
             }
         }
-    }
-
-
-    public void updateRecette(Recette recette){
-        int id = recette.getId();
-        Log.i("DIM","id : "+id);
-        RelativeLayout relativeLayout = findViewById(id);
-        ImageView favorisRecette = (ImageView) relativeLayout.getChildAt(0);
-
-        if(recette.getIsFavorite()){
-            favorisRecette.setImageResource(R.drawable.etoile);
-            favorisRecette.setContentDescription(getString(R.string.favoris));
-        }
-        else{
-            favorisRecette.setImageResource(R.drawable.ic_baseline_star_24);
-            favorisRecette.setContentDescription(getString(R.string.notfavoris));
-        }
-        recetteList.set(id,recette);
     }
 }
