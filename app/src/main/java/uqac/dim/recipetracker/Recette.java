@@ -7,37 +7,48 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import androidx.annotation.RequiresApi;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
+@Entity
 public class Recette implements Parcelable {
 
+    @PrimaryKey
+    private int id;
+
+    @ColumnInfo(name = "nom")
     private String nom;
+
+    @ColumnInfo(name = "description")
     private String description;
-    private String[] ingredients;
+
+    @ColumnInfo(name = "image")
     private int image;
+
+    @ColumnInfo(name = "isFavorite")
     private boolean isFavorite;
 
-    public  Recette(String nom, String description, String[] ingredients, int image){
-        this.nom = nom;
-        this.description = description;
-        this.ingredients = ingredients;
-        this.image = image;
-        this.isFavorite=false;
-    }
 
-    public Recette(String nom, String description, String[] ingredients, int image, boolean isFavorite){
+    public Recette(int id, String nom, String description, int image, boolean isFavorite){
+        this.id = id;
         this.nom = nom;
         this.description = description;
-        this.ingredients = ingredients;
         this.image = image;
         this.isFavorite=isFavorite;
+    }
+
+    @Override
+    public String toString(){
+        return nom+ " : " + description + " Favoris : " + isFavorite;
     }
 
 
     @SuppressLint("NewApi")
     protected Recette(Parcel in) {
+        id = in.readInt();
         nom = in.readString();
         description = in.readString();
-        ingredients = in.createStringArray();
         image = in.readInt();
         isFavorite = in.readBoolean();
     }
@@ -54,16 +65,14 @@ public class Recette implements Parcelable {
         }
     };
 
+    public int getId() { return id; }
+
     public final String getNom(){
         return nom;
     }
 
     public final String getDescription(){
         return description;
-    }
-
-    public final String[] getIngredients(){
-        return ingredients;
     }
 
     public final int getImage(){
@@ -73,6 +82,8 @@ public class Recette implements Parcelable {
     public final boolean getIsFavorite(){
         return isFavorite;
     }
+
+    public void setId(int id) { this.id = id; }
 
     public final void setIsFavorite(Boolean value){
         isFavorite = value;
@@ -87,9 +98,9 @@ public class Recette implements Parcelable {
     @SuppressLint("NewApi")
     @Override
     public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(id);
         parcel.writeString(nom);
         parcel.writeString(description);
-        parcel.writeStringArray(ingredients);
         parcel.writeInt(image);
         parcel.writeBoolean(isFavorite);
     }

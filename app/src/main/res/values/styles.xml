@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="TableLayout">
         <item name="android:layout_width">match_parent</item>
@@ -24,6 +24,9 @@
         <item name="android:layout_height">125sp</item>
         <item name="android:layout_marginStart">25sp</item>
         <item name="android:layout_marginTop">15sp</item>
+        <item name="android:background">@drawable/imageview_background</item>
+        <item name="android:clipToOutline" tools:ignore="NewApi">true</item>
+
     </style>
 
 

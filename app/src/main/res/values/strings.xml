@@ -17,4 +17,8 @@
     <string name="preparation">Préparation</string>
     <string name="search">Search</string>
 
+    <string name="notfavoris">notFavoris</string>
+    <string name="favoris">favoris</string>
+
+
 </resources>

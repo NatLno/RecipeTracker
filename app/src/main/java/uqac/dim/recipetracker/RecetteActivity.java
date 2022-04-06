@@ -1,8 +1,10 @@
 package uqac.dim.recipetracker;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -17,6 +19,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class RecetteActivity extends AppCompatActivity {
 
     Recette recette;
+    public static final String EXTRA_RECETTE= "uqac.dim.recipetracker.MESSAGE1";
+
 
 
     @SuppressLint("UseCompatLoadingForDrawables")
@@ -27,29 +31,29 @@ public class RecetteActivity extends AppCompatActivity {
         Intent intent = getIntent();
         if(intent!=null){
             recette = intent.getParcelableExtra(MainActivity.EXTRA_RECETTE);
+
             if(recette!=null){
-                ((TextView)findViewById(R.id.name_recette)).setText(recette.getNom());
-                switch (recette.getNom()){
-                    case "Poutine":
-                        ((ImageView)findViewById(R.id.image_recette)).setImageResource(R.drawable.poutine);
-                        break;
-                    case "Tarte aux bleuets":
-                        ((ImageView)findViewById(R.id.image_recette)).setImageResource(R.drawable.tarte_aux_bleuets);
-                        break;
-                }
+
+                if(recette.getIsFavorite()){
+                    ((ImageView)findViewById(R.id.favoris)).setImageResource(R.drawable.etoile);            }
+                else{
+                    ((ImageView)findViewById(R.id.favoris)).setImageResource(R.drawable.ic_baseline_star_24);            }
+
+                setTitle(recette.getNom());
+                ((ImageView)findViewById(R.id.image_recette)).setImageResource(recette.getImage());
             }
         }
 
         BottomNavigationView bottomNav = findViewById(R.id.ingre_prepa_menu);
         bottomNav.setOnItemSelectedListener(navListener);
 
-        //ouverture de l'appli avec l'écran home
         getSupportFragmentManager().beginTransaction().replace(R.id.ingre_prepa_fragment_container,new FavoritesFragment()).commit();
 
     }
 
     private BottomNavigationView.OnItemSelectedListener navListener =
             new BottomNavigationView.OnItemSelectedListener(){
+                @SuppressLint("NonConstantResourceId")
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item){
                     Fragment selectedFragment = null;
@@ -70,18 +74,28 @@ public class RecetteActivity extends AppCompatActivity {
             };
 
 
-
     public void setFavorite(View v){
 
         ImageView etoile = (ImageView) v;
         if(recette.getIsFavorite()){
             etoile.setImageResource(R.drawable.ic_baseline_star_24);
+            etoile.setContentDescription(getString(R.string.notfavoris));
         }
         else{
             etoile.setImageResource(R.drawable.etoile);
+            etoile.setContentDescription(getString(R.string.favoris));
         }
-
         recette.setIsFavorite(!recette.getIsFavorite());
+
+        //MainActivity.rdb.recetteDao().updateRecette(recette);
+        HomeFragment fragment = (HomeFragment) getSupportFragmentManager().findFragmentById(R.id.homeFragment);
+        fragment.updateHome(recette);
+        /*Log.i("DIM",MainActivity.rdb.recetteDao().findByNom(recette.getNom()).toString());
+
+        Intent intent = new Intent();
+        intent.putExtra(EXTRA_RECETTE,recette);
+        setResult(Activity.RESULT_OK,intent);
+        finish();*/
     }
 
 }
