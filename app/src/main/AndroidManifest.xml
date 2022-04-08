@@ -19,7 +19,7 @@
         </activity>
         <activity
             android:theme="@style/Theme.RecipeTrackerDetails"
-            android:name=".RecetteActivity"
+            android:name=".RecetteFile.RecetteActivity"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

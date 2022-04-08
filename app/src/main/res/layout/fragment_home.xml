@@ -98,6 +98,46 @@
             <TableLayout
                 android:layout_below="@id/nouveaute_scrollview"
                 style="@style/TableLayout"
+                android:id="@+id/plat">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_span="2"
+                        android:text="@string/plat"
+                        style="@style/Tendances"/>
+
+                    <ImageButton
+                        android:background="#00FFFFFF"
+                        android:src="@drawable/arrow_forward" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <HorizontalScrollView
+                android:id="@+id/plats_scrollview"
+                android:layout_below="@+id/plat"
+                android:layout_width="match_parent"
+                android:layout_height="180sp">
+
+                <LinearLayout
+                    android:id="@+id/plats_linearLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingEnd="20sp"
+                    android:orientation="horizontal"
+                    tools:ignore="RtlSymmetry">
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <TableLayout
+                android:layout_below="@id/plats_scrollview"
+                style="@style/TableLayout"
                 android:id="@+id/dessert">
 
                 <TableRow

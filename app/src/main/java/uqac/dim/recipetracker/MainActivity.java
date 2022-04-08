@@ -9,31 +9,28 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+
+import uqac.dim.recipetracker.Fragment.FavoritesFragment;
+import uqac.dim.recipetracker.Fragment.HomeFragment;
+import uqac.dim.recipetracker.Fragment.SearchFragment;
+import uqac.dim.recipetracker.RecetteFile.Recette;
+import uqac.dim.recipetracker.RecetteFile.RecetteActivity;
+import uqac.dim.recipetracker.RecetteFile.RecetteBD;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -103,7 +100,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             };
 
-
     void initDataBase(Context context) throws IOException {
 
         rdb = RecetteBD.getDatabase(getApplicationContext());
@@ -120,7 +116,10 @@ public class MainActivity extends AppCompatActivity {
                 String nom = arrLine[0];
                 String description = arrLine[1];
                 int isFavorite = Integer.parseInt(arrLine[2]);
-                rdb.recetteDao().addRecette(new Recette(id,nom,description,R.drawable.poutine,isFavorite==1));
+                String typeRecette = arrLine[3];
+                int isTendance = Integer.parseInt(arrLine[4]);
+
+                rdb.recetteDao().addRecette(new Recette(id,nom,description,R.drawable.poutine,isFavorite==1,typeRecette,isTendance==1));
                 recetteImage.add(R.drawable.poutine);
                 id++;
             }
@@ -138,11 +137,12 @@ public class MainActivity extends AppCompatActivity {
     public void ouvrirRecette(View v){
 
         int id = v.getId();
+        Log.i("DIM","IIDD :" + id);
+
         Log.i("DIM","Id: " + id);
 
-        Recette recette = rdb.recetteDao().findById(id);
-        Intent intent = new Intent(MainActivity.this,RecetteActivity.class);
-        intent.putExtra(EXTRA_RECETTE,recette);
+        Intent intent = new Intent(MainActivity.this, RecetteActivity.class);
+        intent.putExtra(EXTRA_RECETTE,id);
         startActivityForResult(intent,LAUNCH_RECETTE);
     }
 

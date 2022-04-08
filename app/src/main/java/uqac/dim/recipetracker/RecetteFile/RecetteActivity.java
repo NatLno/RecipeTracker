@@ -1,21 +1,22 @@
-package uqac.dim.recipetracker;
+package uqac.dim.recipetracker.RecetteFile;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import uqac.dim.recipetracker.Fragment.FavoritesFragment;
+import uqac.dim.recipetracker.MainActivity;
+import uqac.dim.recipetracker.R;
 
 public class RecetteActivity extends AppCompatActivity {
 
@@ -27,9 +28,12 @@ public class RecetteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recette_layout);
 
+
         Intent intent = getIntent();
         if(intent!=null){
-            recette = intent.getParcelableExtra(MainActivity.EXTRA_RECETTE);
+            int id = intent.getIntExtra(MainActivity.EXTRA_RECETTE,0);
+
+            recette = MainActivity.rdb.recetteDao().findById(id);
 
             if(recette!=null){
 

@@ -1,4 +1,4 @@
-package uqac.dim.recipetracker;
+package uqac.dim.recipetracker.RecetteFile;
 
 import android.content.Context;
 
@@ -6,7 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {Recette.class}, version = 1)
+@Database(entities = {Recette.class}, version = 3)
 public abstract class RecetteBD extends RoomDatabase{
 
     private static RecetteBD INSTANCE;

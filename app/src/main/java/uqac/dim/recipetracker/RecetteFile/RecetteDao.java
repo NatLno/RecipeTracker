@@ -1,4 +1,4 @@
-package uqac.dim.recipetracker;
+package uqac.dim.recipetracker.RecetteFile;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -8,6 +8,8 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import java.util.List;
+
+import uqac.dim.recipetracker.RecetteFile.Recette;
 
 @Dao
 public interface RecetteDao {

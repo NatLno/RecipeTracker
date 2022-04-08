@@ -1,4 +1,4 @@
-package uqac.dim.recipetracker;
+package uqac.dim.recipetracker.Fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+
+import uqac.dim.recipetracker.R;
 
 public class SearchFragment extends Fragment {
 
