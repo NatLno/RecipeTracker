@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 
@@ -70,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
 
         //ouverture de l'appli avec l'écran home
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HomeFragment()).commit();
-
     }
 
     private BottomNavigationView.OnItemSelectedListener navListener =
@@ -108,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
         InputStream is = context.getResources().openRawResource(R.raw.recettes);
         BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
+        br.readLine();
         String line = null;
         int id = 0;
         try {
@@ -118,14 +119,16 @@ public class MainActivity extends AppCompatActivity {
                 int isFavorite = Integer.parseInt(arrLine[2]);
                 String typeRecette = arrLine[3];
                 int isTendance = Integer.parseInt(arrLine[4]);
+                String imageNom = arrLine[5];
+                int imageRecette = getResources().getIdentifier(imageNom,"drawable",getPackageName());
 
-                rdb.recetteDao().addRecette(new Recette(id,nom,description,R.drawable.poutine,isFavorite==1,typeRecette,isTendance==1));
+                rdb.recetteDao().addRecette(new Recette(id,nom,description,imageRecette,isFavorite==1,typeRecette,isTendance==1));
                 recetteImage.add(R.drawable.poutine);
                 id++;
             }
 
-            for (Recette recette : rdb.recetteDao().getAllRecettes())
-                Toast.makeText(this,"INSERTION : " + recette.toString(),Toast.LENGTH_SHORT).show();
+            //for (Recette recette : rdb.recetteDao().getAllRecettes())
+            //    Toast.makeText(this,"INSERTION : " + recette.toString(),Toast.LENGTH_SHORT).show();
 
         } finally {
             is.close();

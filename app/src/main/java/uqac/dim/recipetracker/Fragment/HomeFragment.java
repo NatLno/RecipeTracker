@@ -83,11 +83,11 @@ public class HomeFragment extends Fragment {
 
 
         if(recette.getIsFavorite()){
-            favorisRecette.setImageResource(R.drawable.etoile);
+            favorisRecette.setImageResource(R.drawable.favoris);
             favorisRecette.setContentDescription(getString(R.string.favoris));
         }
         else{
-            favorisRecette.setImageResource(R.drawable.ic_baseline_star_24);
+            favorisRecette.setImageResource(R.drawable.non_favoris);
             favorisRecette.setContentDescription(getString(R.string.notfavoris));
         }
 

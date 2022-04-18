@@ -15,6 +15,8 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import uqac.dim.recipetracker.Fragment.FavoritesFragment;
+import uqac.dim.recipetracker.Fragment.IngredientsFragment;
+import uqac.dim.recipetracker.Fragment.PreparationFragment;
 import uqac.dim.recipetracker.MainActivity;
 import uqac.dim.recipetracker.R;
 
@@ -38,9 +40,9 @@ public class RecetteActivity extends AppCompatActivity {
             if(recette!=null){
 
                 if(recette.getIsFavorite()){
-                    ((ImageView)findViewById(R.id.favoris)).setImageResource(R.drawable.etoile);            }
+                    ((ImageView)findViewById(R.id.favoris)).setImageResource(R.drawable.favoris);            }
                 else{
-                    ((ImageView)findViewById(R.id.favoris)).setImageResource(R.drawable.ic_baseline_star_24);            }
+                    ((ImageView)findViewById(R.id.favoris)).setImageResource(R.drawable.non_favoris);            }
 
                 setTitle(recette.getNom());
                 ((ImageView)findViewById(R.id.image_recette)).setImageResource(recette.getImage());
@@ -50,7 +52,7 @@ public class RecetteActivity extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.ingre_prepa_menu);
         bottomNav.setOnItemSelectedListener(navListener);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.ingre_prepa_fragment_container,new FavoritesFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.ingre_prepa_fragment_container,new IngredientsFragment()).commit();
 
     }
 
@@ -85,10 +87,10 @@ public class RecetteActivity extends AppCompatActivity {
 
                     switch (item.getItemId()){
                         case R.id.ingredients:
-                            selectedFragment = new FavoritesFragment();
+                            selectedFragment = new IngredientsFragment();
                             break;
                         case R.id.preparation:
-                            selectedFragment = new FavoritesFragment();
+                            selectedFragment = new PreparationFragment();
                             break;
                     }
 
@@ -102,11 +104,11 @@ public class RecetteActivity extends AppCompatActivity {
 
         ImageView etoile = (ImageView) v;
         if(recette.getIsFavorite()){
-            etoile.setImageResource(R.drawable.ic_baseline_star_24);
+            etoile.setImageResource(R.drawable.non_favoris);
             etoile.setContentDescription(getString(R.string.notfavoris));
         }
         else{
-            etoile.setImageResource(R.drawable.etoile);
+            etoile.setImageResource(R.drawable.favoris);
             etoile.setContentDescription(getString(R.string.favoris));
         }
         recette.setIsFavorite(!recette.getIsFavorite());

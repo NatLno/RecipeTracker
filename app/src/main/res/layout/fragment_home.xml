@@ -25,9 +25,6 @@
                         android:text="@string/tendances"
                         style="@style/Tendances"/>
 
-                    <ImageButton
-                        android:background="#00FFFFFF"
-                        android:src="@drawable/arrow_forward" />
                 </TableRow>
 
             </TableLayout>
@@ -54,50 +51,6 @@
             <TableLayout
                 android:layout_below="@id/tendances_scrollview"
                 style="@style/TableLayout"
-                android:id="@+id/nouveaute">
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_span="2"
-                        android:text="@string/nouveaute"
-                        style="@style/Tendances"/>
-
-                    <ImageButton
-                        android:background="#00FFFFFF"
-                        android:src="@drawable/arrow_forward"
-                        tools:ignore="TouchTargetSizeCheck" />
-
-                </TableRow>
-
-            </TableLayout>
-
-
-            <HorizontalScrollView
-                android:id="@+id/nouveaute_scrollview"
-                android:layout_below="@+id/nouveaute"
-                android:layout_width="match_parent"
-                android:layout_height="180sp">
-
-                <LinearLayout
-                    android:id="@+id/nouveautes_linearLayout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:paddingEnd="20sp"
-                    android:orientation="horizontal"
-                    tools:ignore="RtlSymmetry">
-
-                </LinearLayout>
-
-            </HorizontalScrollView>
-
-
-
-            <TableLayout
-                android:layout_below="@id/nouveaute_scrollview"
-                style="@style/TableLayout"
                 android:id="@+id/plat">
 
                 <TableRow
@@ -108,10 +61,6 @@
                         android:layout_span="2"
                         android:text="@string/plat"
                         style="@style/Tendances"/>
-
-                    <ImageButton
-                        android:background="#00FFFFFF"
-                        android:src="@drawable/arrow_forward" />
 
                 </TableRow>
 
@@ -148,10 +97,6 @@
                         android:layout_span="2"
                         android:text="@string/dessert"
                         style="@style/Tendances"/>
-
-                    <ImageButton
-                        android:background="#00FFFFFF"
-                        android:src="@drawable/arrow_forward" />
 
                 </TableRow>
 

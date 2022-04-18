@@ -1,16 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20sp"
-        android:layout_marginEnd="20sp"
+    <TableLayout
+        style="@style/TableLayout"
+        android:id="@+id/tableLayout">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_span="1"
+                android:id="@+id/search_editText"
+                android:layout_weight="80"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:hint="@string/search"
+                android:background="@drawable/conteneur_background"
+                android:textSize="26sp"
+                android:drawableStart="@drawable/ic_baseline_search_24"
+                android:inputType="text"
+                tools:ignore="RtlSymmetry" />
+
+            <ImageButton
+                android:id="@+id/search_button"
+                android:layout_weight="20"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:background="@drawable/conteneur_background"
+                android:src="@drawable/ic_baseline_search_24" />
+
+        </TableRow>
+
+    </TableLayout>
+
+
+    <ScrollView
         android:layout_marginTop="20sp"
-        android:hint="@string/search"
-        android:background="@drawable/conteneur_background"
-        android:textSize="25sp"
-        android:drawableStart="@drawable/ic_baseline_search_24"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tableLayout">
+
+        <LinearLayout
+            android:id="@+id/search_linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
 </RelativeLayout>
