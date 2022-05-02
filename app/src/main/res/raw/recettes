@@ -1,4 +1,7 @@
-NomRecette ; DescriptionRecette ; Favoris ou nonFavoris ; Type De Recette ; en tendance ou non ; nom de l'image source
-Poutine;La poutine est un plat québécois composé de frites et de cheddar, recouvert de sauce brune.;1;Plat;1;poutine
-Tarte aux bleuets;La Tarte aux bleuets est un dessert classique convoité tant au Canada que dans le nord des États-Unis.;0;Dessert;1;tarte_aux_bleuets
-Pâtes à la carbonara;Les pâtes à la carbonara sont une spécialité de la cuisine italienne, à base de pâtes, d'œufs, des lardons et du fromage râpé.;0;Plat;0;pates_carbonara
+id;NomRecette ; DescriptionRecette ; Temps de preparation ; Favoris ou nonFavoris ; Type De Recette ; nom de l'image source
+1;Poutine;La poutine est un plat québécois composé de frites et de cheddar, recouvert de sauce brune.;45;1;Plat;poutine
+2;Tarte aux bleuets;La Tarte aux bleuets est un dessert classique convoité tant au Canada et que dans le nord des États-Unis.;60;0;Dessert;tarte_aux_bleuets
+3;Pâtes à la carbonara;Les pâtes à la carbonara sont une spécialité de la cuisine italienne, à base de pâtes, d'œufs, des lardons et du fromage râpé.;20;0;Plat;pates_carbonara
+4;Salade niçoise;La salade niçoise est une spécialité culinaire traditionnelle de la cuisine niçoise, composée de tomates, d'anchois et d’huile d’olive.;20;0;Entree;salade_nicoise
+5;Cheeseburger;Un cheeseburger ou hamburger au fromage est un hamburger dans lequel une tranche de fromage accompagne la viande.;15;1;Plat;cheeseburger
+6;Soupe de potiron;La soupe de potiron est une soupe préparée à partir d'une purée de potiron, originaire des régions tropicales d'Amérique du Sud.;10;0;Entree;soupe_de_potiron

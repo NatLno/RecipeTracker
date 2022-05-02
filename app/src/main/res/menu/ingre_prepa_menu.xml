@@ -3,10 +3,12 @@
     <item
         android:id="@+id/ingredients"
         android:icon="@drawable/ingredient_image"
+        android:contentDescription="recetteId"
         android:title="@string/ingredients" />
 
     <item
         android:id="@+id/preparation"
         android:icon="@drawable/preparation_image"
+        android:contentDescription="recetteId"
         android:title="@string/preparation"/>
 </menu>

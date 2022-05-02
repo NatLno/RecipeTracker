@@ -3,28 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/drawable/arrow_forward.xml" value="0.1725" />
-        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/drawable/conteneur_background.xml" value="0.125" />
-        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/drawable/fav.xml" value="0.103" />
-        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/drawable/favoris.xml" value="0.174" />
-        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.1805" />
-        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1835" />
-        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.1725" />
-        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/drawable/imageview_background.xml" value="0.125" />
-        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/drawable/non_favoris.xml" value="0.174" />
-        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/layout/container_recette.xml" value="0.4" />
-        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/layout/fragment_favorites.xml" value="0.25" />
-        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/layout/fragment_home.xml" value="0.25" />
-        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/layout/fragment_ingredients.xml" value="0.25" />
-        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/layout/fragment_preparation.xml" value="0.25" />
-        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/layout/fragment_search.xml" value="0.264" />
-        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/layout/recette_activity.xml" value="0.25" />
-        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/layout/recette_layout.xml" value="0.25" />
-        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/menu/bottom_toolbar.xml" value="0.25" />
-        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/menu/ingre_prepa_menu.xml" value="0.25" />
-        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/menu/search_menu.xml" value="0.25" />
-        <entry key="..\:/Users/lenog/AndroidStudioProjects/Projet/RecipeTracker/app/src/main/res/mipmap-anydpi-v26/Recipe_Trakcer.xml" value="0.172" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Fares/RecipeTracker/app/src/main/res/drawable/add_ingredient_image.xml" value="0.1" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Fares/RecipeTracker/app/src/main/res/drawable/background_ingredient.xml" value="0.142" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Fares/RecipeTracker/app/src/main/res/drawable/conteneur_background.xml" value="0.142" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Fares/RecipeTracker/app/src/main/res/drawable/ic_launcher_background.xml" value="0.142" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Fares/RecipeTracker/app/src/main/res/drawable/imageview_background.xml" value="0.142" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Fares/RecipeTracker/app/src/main/res/drawable/remove_ingredient_image.xml" value="0.142" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Fares/RecipeTracker/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Fares/RecipeTracker/app/src/main/res/layout/container_etape_prepa.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Fares/RecipeTracker/app/src/main/res/layout/container_ingredients.xml" value="0.4" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Fares/RecipeTracker/app/src/main/res/layout/container_recette.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Fares/RecipeTracker/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Fares/RecipeTracker/app/src/main/res/layout/fragment_ingredients.xml" value="0.25" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Fares/RecipeTracker/app/src/main/res/layout/fragment_preparation.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Fares/RecipeTracker/app/src/main/res/layout/fragment_search.xml" value="0.264" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Fares/RecipeTracker/app/src/main/res/layout/recette_layout.xml" value="0.264" />
+        <entry key="..\:/Users/lenog/AndroidStudioProjects/Fares/RecipeTracker/app/src/main/res/menu/ingre_prepa_menu.xml" value="0.14583333333333334" />
       </map>
     </option>
   </component>

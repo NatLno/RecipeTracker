@@ -1,75 +1,46 @@
 package uqac.dim.recipetracker.RecetteFile;
 
-import android.graphics.Bitmap;
+public class Recette {
+    int id;
 
-import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
+    String nom;
+
+    String description;
+
+    int tempsPreparation;
+
+    boolean favorite;
+
+    int image;
+
+    String typeRecette;
 
 
-@Entity
-public class Recette{
+    public Recette() {}
 
-    @PrimaryKey
-    private int id;
-
-    @ColumnInfo(name = "nom")
-    private String nom;
-
-    @ColumnInfo(name = "description")
-    private String description;
-
-    @ColumnInfo(name = "image")
-    private int image;
-
-    @ColumnInfo(name = "isFavorite")
-    private boolean isFavorite;
-
-    @ColumnInfo(name = "typeRecette")
-    private String typeRecette;
-
-    @ColumnInfo(name = "isTendance")
-    private boolean isTendance;
-
-    public Recette(int id, String nom, String description, int image, boolean isFavorite, String typeRecette, boolean isTendance){
+    public Recette(int id, String nom, String description, int tempsPreparation, boolean favorite, int image, String typeRecette) {
         this.id = id;
         this.nom = nom;
         this.description = description;
+        this.tempsPreparation = tempsPreparation;
+        this.favorite = favorite;
         this.image = image;
-        this.isFavorite=isFavorite;
         this.typeRecette = typeRecette;
-        this.isTendance = isTendance;
     }
 
-    @Override
-    public String toString(){
-        return nom+ " : " + description + ", Favoris : " + isFavorite + ", Type de recette : " + typeRecette;
-    }
-
+    public void setId(int id){this.id = id;}
+    public void setNom(String nom){this.nom = nom;}
+    public void setDescription(String description){this.description = description;}
+    public void setTempsPreparation(int tempsPreparation){this.tempsPreparation = tempsPreparation;}
+    public void setFavorite(boolean favorite){this.favorite = favorite;}
+    public void setImage(int image) { this.image = image; }
+    public void setTypeRecette(String typeRecette) { this.typeRecette = typeRecette; }
 
     public int getId() { return id; }
-
-    public final String getNom(){
-        return nom;
-    }
-
-    public final String getDescription(){
-        return description;
-    }
-
-    public final int getImage(){
-        return image;
-    }
-
-    public final boolean getIsFavorite(){ return isFavorite; }
-
+    public String getNom() { return nom; }
+    public String getDescription() { return description; }
+    public int getTempsPreparation() { return tempsPreparation; }
+    public boolean getFavorite() { return favorite; }
+    public int getImage() { return image; }
     public String getTypeRecette() { return typeRecette; }
-
-    public boolean getIsTendance() { return isTendance; }
-
-    public final void setIsFavorite(Boolean value){
-        isFavorite = value;
-    }
-
-    public void setTendance(boolean tendance) { isTendance = tendance; }
 }

@@ -15,7 +15,7 @@
             <EditText
                 android:layout_span="1"
                 android:id="@+id/search_editText"
-                android:layout_weight="80"
+                android:layout_weight="60"
                 android:layout_width="0sp"
                 android:layout_height="match_parent"
                 android:hint="@string/search"
@@ -33,16 +33,36 @@
                 android:background="@drawable/conteneur_background"
                 android:src="@drawable/ic_baseline_search_24" />
 
+            <ImageButton
+                android:id="@+id/search_online_button"
+                android:layout_weight="20"
+                android:layout_width="0sp"
+                android:layout_height="40sp"
+                android:background="@drawable/conteneur_background"
+                android:scaleType="centerInside"
+                android:padding="5sp"
+                android:src="@drawable/lien_recette" />
+
         </TableRow>
 
     </TableLayout>
+
+    <Button
+        android:id="@+id/mesIngredientSearch"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:text="Chercher en fonction de mes ingredients"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/recipe_tracker_background"
+        android:layout_below="@id/tableLayout"/>
 
 
     <ScrollView
         android:layout_marginTop="20sp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/tableLayout">
+        android:layout_below="@id/mesIngredientSearch">
 
         <LinearLayout
             android:id="@+id/search_linearLayout"

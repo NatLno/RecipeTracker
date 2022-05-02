@@ -14,4 +14,9 @@
         android:id="@+id/favorites"
         android:icon="@drawable/non_favoris"
         android:title="Favorites"/>
+
+    <item
+        android:id="@+id/mes_ingredients"
+        android:icon="@drawable/ingredient_image"
+        android:title="Mes Ingrédients"/>
 </menu>

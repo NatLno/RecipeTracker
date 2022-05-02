@@ -2,10 +2,12 @@ package uqac.dim.recipetracker.RecetteFile;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -35,11 +37,11 @@ public class RecetteActivity extends AppCompatActivity {
         if(intent!=null){
             int id = intent.getIntExtra(MainActivity.EXTRA_RECETTE,0);
 
-            recette = MainActivity.rdb.recetteDao().findById(id);
+            recette = MainActivity.rdb.findById(id);
 
             if(recette!=null){
 
-                if(recette.getIsFavorite()){
+                if(recette.getFavorite()){
                     ((ImageView)findViewById(R.id.favoris)).setImageResource(R.drawable.favoris);            }
                 else{
                     ((ImageView)findViewById(R.id.favoris)).setImageResource(R.drawable.non_favoris);            }
@@ -58,7 +60,7 @@ public class RecetteActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        MainActivity.rdb.recetteDao().updateRecette(recette);
+        MainActivity.rdb.updateRecette(recette);
         Intent intent = new Intent();
         setResult(Activity.RESULT_OK,intent);
         finish();
@@ -68,7 +70,7 @@ public class RecetteActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                MainActivity.rdb.recetteDao().updateRecette(recette);
+                MainActivity.rdb.updateRecette(recette);
 
                 Intent intent = new Intent();
                 setResult(Activity.RESULT_OK,intent);
@@ -103,7 +105,7 @@ public class RecetteActivity extends AppCompatActivity {
     public void setFavorite(View v){
 
         ImageView etoile = (ImageView) v;
-        if(recette.getIsFavorite()){
+        if(recette.getFavorite()){
             etoile.setImageResource(R.drawable.non_favoris);
             etoile.setContentDescription(getString(R.string.notfavoris));
         }
@@ -111,6 +113,6 @@ public class RecetteActivity extends AppCompatActivity {
             etoile.setImageResource(R.drawable.favoris);
             etoile.setContentDescription(getString(R.string.favoris));
         }
-        recette.setIsFavorite(!recette.getIsFavorite());
+        recette.setFavorite(!recette.getFavorite());
     }
 }

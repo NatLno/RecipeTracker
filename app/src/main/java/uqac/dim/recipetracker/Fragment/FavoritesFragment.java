@@ -37,7 +37,7 @@ public class FavoritesFragment extends Fragment{
         Log.i("DIM","FavorisCreate");
 
         for (Recette recette: MainActivity.recetteList) {
-            if(recette.getIsFavorite())
+            if(recette.getFavorite())
                 initRecette(recette, R.id.favorite_linearLayout);
         }
 
@@ -73,7 +73,7 @@ public class FavoritesFragment extends Fragment{
         imageRecette.setClipToOutline(true);
 
 
-        if(recette.getIsFavorite()){
+        if(recette.getFavorite()){
             favorisRecette.setImageResource(R.drawable.favoris);
             favorisRecette.setContentDescription(getString(R.string.favoris));
         }

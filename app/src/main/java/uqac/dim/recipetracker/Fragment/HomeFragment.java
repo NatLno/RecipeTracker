@@ -36,7 +36,11 @@ public class HomeFragment extends Fragment {
 
         for (Recette recette: MainActivity.recetteList) {
 
-            int layoutId = R.id.tendances_linearLayout;
+            int layoutId = R.id.plats_linearLayout;
+
+            if (recette.getTypeRecette().equals("Entree")) {
+                layoutId =  R.id.entrees_linearLayout;
+            }
 
             if (recette.getTypeRecette().equals("Plat")) {
                 layoutId =  R.id.plats_linearLayout;
@@ -45,11 +49,7 @@ public class HomeFragment extends Fragment {
                 layoutId =  R.id.desserts_linearLayout;
             }
 
-
             initRecette(recette, layoutId);
-            if(recette.getIsTendance()){
-                initRecette(recette, R.id.tendances_linearLayout);
-            }
             Log.i("DIM",recette.toString());
         }
     }
@@ -66,7 +66,7 @@ public class HomeFragment extends Fragment {
         LinearLayout container_recette = (LinearLayout) getLayoutInflater().inflate(R.layout.container_recette,null,false);
 
         RelativeLayout relativeLayout = (RelativeLayout) container_recette.getChildAt(0);
-        //Poutine init
+        //Recette init
         ImageView favorisRecette = (ImageView) relativeLayout.getChildAt(recette_favorite);
         TextView textRecette = (TextView) relativeLayout.getChildAt(recette_text);
         TextView descriptionRecette = (TextView) relativeLayout.getChildAt(recette_description);
@@ -82,7 +82,7 @@ public class HomeFragment extends Fragment {
         imageRecette.setClipToOutline(true);
 
 
-        if(recette.getIsFavorite()){
+        if(recette.getFavorite()){
             favorisRecette.setImageResource(R.drawable.favoris);
             favorisRecette.setContentDescription(getString(R.string.favoris));
         }
